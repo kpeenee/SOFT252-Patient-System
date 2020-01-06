@@ -11,11 +11,13 @@ package patientsystem.Users;
  */
 public class Patient extends User {
 
+    
+    
     private String gender;
     private int age;
     
-    public Patient(String firstName, String surname, String userId, String address,String gender, int age) {
-        super(firstName, surname, userId, address);
+    public Patient(String firstName, String surname, String userId, String password, String address,String gender, int age) {
+        super(firstName, surname, userId, address, password);
         this.gender = gender;
         this.age = age;
     }

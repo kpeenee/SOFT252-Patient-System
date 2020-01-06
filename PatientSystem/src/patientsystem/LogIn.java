@@ -5,6 +5,16 @@
  */
 package patientsystem;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import patientsystem.Users.*;
+
+
 /**
  *
  * @author Student
@@ -115,9 +125,44 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDActionPerformed
 
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
-        // TODO add your handling code here:
+
+        checkPatienLogIn();
+        
     }//GEN-LAST:event_btnLogInActionPerformed
 
+    private void checkPatienLogIn(){
+               String fileName = "patients.bin";
+               boolean loop = true;
+        try{
+            
+           ObjectInputStream is = new ObjectInputStream(new FileInputStream(fileName));
+           
+           while(loop){
+           Patient potentialLogIn = (Patient) is.readObject();
+           
+           if(Objects.equals(potentialLogIn.getUserId(), txtID.getText()) && 
+                   Objects.equals(potentialLogIn.getPassword(), txtPassword.getText())){
+               System.out.println("Log in successful");
+               
+               
+           }
+           System.out.println(potentialLogIn.getPassword());
+           
+           }
+           is.close();
+       } catch (FileNotFoundException ex) {
+            Logger.getLogger(LogIn.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            System.out.println("Log in unsuccessful");
+            return;
+        }
+        catch (ClassNotFoundException ex){
+            Logger.getLogger(LogIn.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+    
     private void btnCreateAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateAccountActionPerformed
         new AccountCreation().setVisible(true);
     }//GEN-LAST:event_btnCreateAccountActionPerformed
@@ -151,6 +196,7 @@ public class LogIn extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            
             public void run() {
                 new LogIn().setVisible(true);
             }

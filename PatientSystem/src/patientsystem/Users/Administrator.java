@@ -11,8 +11,8 @@ package patientsystem.Users;
  */
 public class Administrator extends User {
 
-    public Administrator(String firstName, String surname, String userId, String address) {
-        super(firstName, surname, userId, address);
+    public Administrator(String firstName, String surname, String userId, String address, String password) {
+        super(firstName, surname, userId, address, password);
     }
     
 }

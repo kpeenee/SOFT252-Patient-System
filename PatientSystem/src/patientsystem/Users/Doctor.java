@@ -11,8 +11,8 @@ package patientsystem.Users;
  */
 public class Doctor extends User {
 
-    public Doctor(String firstName, String surname, String userId, String address) {
-        super(firstName, surname, userId, address);
+    public Doctor(String firstName, String surname, String userId, String address,String password) {
+        super(firstName, surname, userId, address, password);
     }
     
 }

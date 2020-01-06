@@ -11,8 +11,8 @@ package patientsystem.Users;
  */
 public class Secretary extends User {
 
-    public Secretary(String firstName, String surname, String userId, String address) {
-        super(firstName, surname, userId, address);
+    public Secretary(String firstName, String surname, String userId, String address,String password) {
+        super(firstName, surname, userId, address, password);
     }
     
 }
