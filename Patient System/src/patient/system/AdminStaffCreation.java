@@ -156,6 +156,10 @@ public class AdminStaffCreation extends javax.swing.JFrame {
         UserFactory newStaff = new UserFactory();
         User newUser = newStaff.getNewUser(cmbType.getSelectedItem().toString(), txtName.getText(), txtID.getText(), txtPassword.getText(), txtAddress.getText());
         lblSuccess.setText(newUser.getName() + " " + newUser.getUserID() + " " + newUser.getPassword()+ " " + newUser.getAddress());
+        
+        ArrayList<User> allUsers = UserManagement.getUsers();
+        allUsers.add(newUser);
+        UserManagement.saveNewUsers(allUsers);
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed

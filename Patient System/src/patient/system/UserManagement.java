@@ -109,4 +109,19 @@ public class UserManagement {
          
         return theUsers; 
     }
+    
+    static void saveNewUsers(ArrayList<User> updatedList)
+    {
+          try {
+            FileOutputStream fileOut = new FileOutputStream(filePath);
+            ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
+            objOut.writeObject(updatedList);
+            objOut.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
