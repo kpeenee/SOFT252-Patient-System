@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package patientsystem;
+package Users;
 
 /**
  *
  * @author Student
  */
-public class PatientSystem {
+public class Admin extends User{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       new LogIn().setVisible(true);
+    public Admin(String name, String userID, String password, String address) {
+        super(name, userID, password, address);
     }
     
 }

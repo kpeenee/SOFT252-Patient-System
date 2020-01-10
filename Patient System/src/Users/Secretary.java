@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package patientsystem.Users;
+package Users;
 
 /**
  *
  * @author Student
  */
-public class Doctor extends User {
+public class Secretary extends User {
 
-    public Doctor(String firstName, String surname, String userId, String address,String password) {
-        super(firstName, surname, userId, address, password);
+    public Secretary(String name, String userID, String password, String address) {
+        super(name, userID, password, address);
     }
     
 }
