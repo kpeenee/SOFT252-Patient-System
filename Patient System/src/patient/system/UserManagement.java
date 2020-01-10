@@ -84,5 +84,9 @@ public class UserManagement {
             AdminPage adminPage = new AdminPage();
             adminPage.show();
         }
+        else if(theUser.getUserID().charAt(0) == 'D'){
+            DoctorPage doctorPage = new DoctorPage();
+            doctorPage.show();
+        }
     }
 }
