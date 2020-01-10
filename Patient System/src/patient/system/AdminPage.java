@@ -29,7 +29,7 @@ public class AdminPage extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         btnAddStaff = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnDeleteStaff = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -43,7 +43,12 @@ public class AdminPage extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Delete staff member");
+        btnDeleteStaff.setText("Delete staff member");
+        btnDeleteStaff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteStaffActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,7 +63,7 @@ public class AdminPage extends javax.swing.JFrame {
                         .addGap(141, 141, 141)
                         .addComponent(btnAddStaff)
                         .addGap(125, 125, 125)
-                        .addComponent(jButton2)))
+                        .addComponent(btnDeleteStaff)))
                 .addContainerGap(134, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -69,7 +74,7 @@ public class AdminPage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 307, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddStaff)
-                    .addComponent(jButton2))
+                    .addComponent(btnDeleteStaff))
                 .addGap(165, 165, 165))
         );
 
@@ -80,6 +85,11 @@ public class AdminPage extends javax.swing.JFrame {
         AdminStaffCreation adminCreate = new AdminStaffCreation();
         adminCreate.show();
     }//GEN-LAST:event_btnAddStaffActionPerformed
+
+    private void btnDeleteStaffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteStaffActionPerformed
+       AdminStaffRemoval remove = new AdminStaffRemoval();
+       remove.show();
+    }//GEN-LAST:event_btnDeleteStaffActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,7 +128,7 @@ public class AdminPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddStaff;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnDeleteStaff;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

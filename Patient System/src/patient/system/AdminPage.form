@@ -33,7 +33,7 @@
                       <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
                       <Component id="btnAddStaff" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-                      <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnDeleteStaff" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="134" max="32767" attributes="0"/>
@@ -48,7 +48,7 @@
               <EmptySpace pref="307" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnAddStaff" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDeleteStaff" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
           </Group>
@@ -72,10 +72,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddStaffActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnDeleteStaff">
       <Properties>
         <Property name="text" type="java.lang.String" value="Delete staff member"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteStaffActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
