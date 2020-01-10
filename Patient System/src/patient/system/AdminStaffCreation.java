@@ -6,6 +6,7 @@
 package patient.system;
 
 import Users.User;
+import java.util.ArrayList;
 
 /**
  *
@@ -41,6 +42,7 @@ public class AdminStaffCreation extends javax.swing.JFrame {
         lblSuccess = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtPassword = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -73,6 +75,13 @@ public class AdminStaffCreation extends javax.swing.JFrame {
 
         jLabel5.setText("Password:");
 
+        jButton1.setText("Test");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,8 +91,12 @@ public class AdminStaffCreation extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSuccess)
-                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblSuccess)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                .addComponent(jButton1)
+                                .addGap(77, 77, 77))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(119, 119, 119)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -130,8 +143,10 @@ public class AdminStaffCreation extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblSuccess)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,6 +161,11 @@ public class AdminStaffCreation extends javax.swing.JFrame {
     private void txtAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAddressActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAddressActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ArrayList<User> allUsers = UserManagement.getUsers();
+        System.out.println(allUsers.size());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +205,7 @@ public class AdminStaffCreation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSave;
     private javax.swing.JComboBox<String> cmbType;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

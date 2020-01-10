@@ -89,4 +89,24 @@ public class UserManagement {
             doctorPage.show();
         }
     }
+    
+    static ArrayList<User> getUsers(){
+        ArrayList<User> theUsers = null;
+         try {
+            FileInputStream fileIn = new FileInputStream(filePath);
+            ObjectInputStream objIn = new ObjectInputStream(fileIn);
+            theUsers = (ArrayList<User>) objIn.readObject();
+            objIn.close();
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+        return theUsers; 
+    }
 }
