@@ -56,28 +56,7 @@ public class UserManagement {
             Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    static void populate()
-    {
-        User bob = new Doctor("bob","D1234","chicken","Bobs way");
-        User cal = new Admin("cal","A4567","piggy","Cals house");
-        ArrayList<User> newUsers = new ArrayList<User>();
-        
-        newUsers.add(bob);
-        newUsers.add(cal);
-        
-        try {
-            FileOutputStream fileOut = new FileOutputStream(filePath);
-            ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
-            objOut.writeObject(newUsers);
-            objOut.close();
-            
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+   
     
     static void openPage(User theUser){
         if(theUser.getUserID().charAt(0) == 'A'){
