@@ -33,7 +33,7 @@ public class LogInPage extends javax.swing.JFrame {
         txtUserID = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         btnLogIn = new javax.swing.JButton();
-        btnPopulate = new javax.swing.JButton();
+        btnRequestAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,10 +57,10 @@ public class LogInPage extends javax.swing.JFrame {
             }
         });
 
-        btnPopulate.setText("Populate");
-        btnPopulate.addActionListener(new java.awt.event.ActionListener() {
+        btnRequestAccount.setText("Request Account");
+        btnRequestAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPopulateActionPerformed(evt);
+                btnRequestAccountActionPerformed(evt);
             }
         });
 
@@ -72,19 +72,21 @@ public class LogInPage extends javax.swing.JFrame {
                 .addGap(123, 123, 123)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnLogIn)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
-                            .addComponent(btnPopulate))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addGap(23, 23, 23)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtUserID, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                .addComponent(txtPassword)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(btnLogIn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnRequestAccount))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3))
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtUserID)
+                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -103,7 +105,7 @@ public class LogInPage extends javax.swing.JFrame {
                 .addGap(64, 64, 64)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogIn)
-                    .addComponent(btnPopulate))
+                    .addComponent(btnRequestAccount))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
@@ -114,13 +116,13 @@ public class LogInPage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserIDActionPerformed
 
-    private void btnPopulateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopulateActionPerformed
-        UserManagement.populate();
-    }//GEN-LAST:event_btnPopulateActionPerformed
-
     private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
         UserManagement.logIn(txtUserID.getText(),txtPassword.getText());
     }//GEN-LAST:event_btnLogInActionPerformed
+
+    private void btnRequestAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAccountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRequestAccountActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +161,7 @@ public class LogInPage extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogIn;
-    private javax.swing.JButton btnPopulate;
+    private javax.swing.JButton btnRequestAccount;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
