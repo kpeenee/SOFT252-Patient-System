@@ -40,6 +40,26 @@ public class PoyentialPatientManagement {
         }
     }
     
+    static void populate()
+    {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(filePath);
+            ObjectOutputStream objOut = new ObjectOutputStream(fileOut);
+            Patient bob = new Patient("Bob Dinkle", "P1357", "Volcano","22 Place");
+            bob.setAge(18);
+            bob.setGender("Male");
+            ArrayList<User> user = new ArrayList<User>();
+            user.add(bob);
+            objOut.writeObject(user);
+            objOut.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(UserManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     static ArrayList<User> getPotentialPatients()
     {
           ArrayList<User> theUsers = null;

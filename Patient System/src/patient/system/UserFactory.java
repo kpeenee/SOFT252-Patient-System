@@ -18,6 +18,7 @@ public class UserFactory {
         if(type.equals("Admin")){return new Admin(name,"A" + ID, password, address);}
         else if(type.equals("Doctor")){return new Doctor(name,"D" + ID,password,address);}
         else if(type.equals("Secretary")){return new Secretary(name,"S" + ID, password, address);}
+        else if(type.equals("Patient")) {return new Patient(name,"P" + ID,password,address);}
         else{return null;}
     }
 }

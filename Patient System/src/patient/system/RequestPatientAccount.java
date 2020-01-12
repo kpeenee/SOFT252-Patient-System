@@ -5,6 +5,9 @@
  */
 package patient.system;
 
+import Users.*;
+import java.util.ArrayList;
+
 /**
  *
  * @author Student
@@ -41,6 +44,7 @@ public class RequestPatientAccount extends javax.swing.JFrame {
         txtID = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         btnRequest = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -74,6 +78,13 @@ public class RequestPatientAccount extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Populate");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,24 +95,29 @@ public class RequestPatientAccount extends javax.swing.JFrame {
                         .addGap(198, 198, 198)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jButton1)
+                                .addGap(81, 81, 81)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnRequest, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtName)
-                                .addComponent(txtAddress)
-                                .addComponent(txtPassword)
-                                .addComponent(txtAge)
-                                .addComponent(cmbGender, 0, 150, Short.MAX_VALUE)
-                                .addComponent(txtID)))))
+                            .addComponent(txtName)
+                            .addComponent(txtAddress)
+                            .addComponent(txtPassword)
+                            .addComponent(txtAge)
+                            .addComponent(cmbGender, 0, 150, Short.MAX_VALUE)
+                            .addComponent(txtID))))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -134,7 +150,9 @@ public class RequestPatientAccount extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addComponent(btnRequest)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRequest)
+                    .addComponent(jButton1))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -146,8 +164,20 @@ public class RequestPatientAccount extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIDActionPerformed
 
     private void btnRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestActionPerformed
+        UserFactory createPatient = new UserFactory();
+        ArrayList<User> otherPotentials = PoyentialPatientManagement.getPotentialPatients();
+        User newPotential = createPatient.getNewUser("Patient", txtName.getText(), txtID.getText(), txtPassword.getText(), txtAddress.getText());
+        Patient newPatient = (Patient) newPotential;
+        newPatient.setAge(Integer.parseInt(txtAge.getText()));
+        newPatient.setGender(cmbGender.getSelectedItem().toString());
         
+        otherPotentials.add(newPatient);
+        PoyentialPatientManagement.saveNewPotentialPatient(otherPotentials);
     }//GEN-LAST:event_btnRequestActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      PoyentialPatientManagement.populate();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,6 +217,7 @@ public class RequestPatientAccount extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRequest;
     private javax.swing.JComboBox<String> cmbGender;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

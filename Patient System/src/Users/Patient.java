@@ -12,9 +12,24 @@ package Users;
 public class Patient extends User {
 int age;
 String gender;
-    public Patient(String name, String userID, String password, String address, int age, String gender) {
+    public Patient(String name, String userID, String password, String address) {
         super(name, userID, password, address);
+      
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setAge(int age) {
         this.age = age;
+    }
+
+    public void setGender(String gender) {
         this.gender = gender;
     }
     

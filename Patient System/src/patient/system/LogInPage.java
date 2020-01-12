@@ -121,7 +121,8 @@ public class LogInPage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLogInActionPerformed
 
     private void btnRequestAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAccountActionPerformed
-        // TODO add your handling code here:
+        RequestPatientAccount request = new RequestPatientAccount();
+        request.show();
     }//GEN-LAST:event_btnRequestAccountActionPerformed
 
     /**
