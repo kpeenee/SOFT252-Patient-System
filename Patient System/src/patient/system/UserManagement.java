@@ -71,6 +71,11 @@ public class UserManagement {
             SecretaryPage secretaryPage = new SecretaryPage();
             secretaryPage.show();
         }
+        else if (theUser.getUserID().charAt(0) == 'P')
+        {
+            PatientPage patientPage = new PatientPage();
+            patientPage.show();
+        }
     }
     
     static ArrayList<User> getUsers(){
